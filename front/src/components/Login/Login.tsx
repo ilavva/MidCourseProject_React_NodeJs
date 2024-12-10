@@ -35,11 +35,15 @@ export const Login = () => {
 
   return (
     <div>
-      <h2>Login</h2>
-      <input id="uname" type="text" placeholder="username" />
-      <input id="pass" type="text" placeholder="password" />
-      <input type="submit" value={"send"} onClick={userClickedBtn} />
-      <h3>{name}</h3>
+      {!isLoginDetailsCorrect && (
+        <>
+          <h2>Login</h2>
+          <input id="uname" type="text" placeholder="username" />
+          <input id="pass" type="text" placeholder="password" />
+          <input type="submit" value="send" onClick={userClickedBtn} />
+        </>
+      )}
+      {isLoginDetailsCorrect && <h3>{name}</h3>}
     </div>
   );
 };
